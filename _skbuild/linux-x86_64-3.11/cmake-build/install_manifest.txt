@@ -1,7 +1,0 @@
-/home/wlruys/syncthing/workspace/doozer/_skbuild/linux-x86_64-3.11/cmake-install/lib/libdoozerimpl.so
-/home/wlruys/syncthing/workspace/doozer/_skbuild/linux-x86_64-3.11/cmake-install/lib/python3.11/site-packages/doozer/core.cpython-311-x86_64-linux-gnu.so
-/home/wlruys/syncthing/workspace/doozer/_skbuild/linux-x86_64-3.11/cmake-install/lib/python3.11/site-packages/doozer/__init__.py
-/home/wlruys/syncthing/workspace/doozer/_skbuild/linux-x86_64-3.11/cmake-install/lib/python3.11/site-packages/doozer/utility.py
-/home/wlruys/syncthing/workspace/doozer/_skbuild/linux-x86_64-3.11/cmake-install/lib/python3.11/site-packages/doozer/gpu/__init__.py
-/home/wlruys/syncthing/workspace/doozer/_skbuild/linux-x86_64-3.11/cmake-install/lib/python3.11/site-packages/doozer/gpu/utility.py
-/home/wlruys/syncthing/workspace/doozer/_skbuild/linux-x86_64-3.11/cmake-install/lib/python3.11/site-packages/doozer/cpu/__init__.py
