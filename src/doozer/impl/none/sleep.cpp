@@ -1,10 +1,7 @@
 #include "sleep.h"
 #include <chrono>
 #include <cstdint>
-#include <cstdint>
 #include <cstdio>
-#include <cuda.h>
-#include <cuda_runtime_api.h>
 #include <stdio.h>
 #include <sys/time.h>
 #include <unistd.h>
