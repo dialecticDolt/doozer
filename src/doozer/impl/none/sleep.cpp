@@ -1,6 +1,7 @@
 #include "sleep.h"
 #include <chrono>
 #include <cstdint>
+#include <cstdint>
 #include <cstdio>
 #include <cuda.h>
 #include <cuda_runtime_api.h>
@@ -15,8 +16,7 @@
 using namespace std;
 using namespace chrono;
 
-void gpu_busy_sleep(const int device, const unsigned long long t,
-                    intptr_t stream_ptr) {
+void gpu_busy_sleep(const int device, const uint64_t t, intptr_t stream_ptr) {
 #ifdef DOOZER_ENABLE_NVTX
   nvtx3::scoped_range r{"cpp::gpu_busy_sleep"};
 #endif

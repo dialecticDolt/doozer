@@ -15,7 +15,9 @@
 using namespace std;
 using namespace chrono;
 
-__device__ void gpu_sleep_impl(unsigned long long sleep_cycles) {
+#include <cstdint>
+
+__device__ void gpu_sleep_impl(uint64_t sleep_cycles) {
   unsigned long start = clock64();
   unsigned long cycles_elapsed;
   do {
@@ -27,7 +29,7 @@ __global__ void gpu_sleep_kernel(clock_t clock_count) {
   gpu_sleep_impl(clock_count);
 }
 
-void gpu_busy_sleep(const int device, const unsigned long long cycles,
+void gpu_busy_sleep(const int device, const uint64_t cycles,
                     intptr_t stream_ptr) {
 #ifdef DOOZER_ENABLE_NVTX
   nvtx3::scoped_range r{"cpp::gpu_busy_sleep"};

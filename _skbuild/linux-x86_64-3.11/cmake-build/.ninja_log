@@ -1,0 +1,9 @@
+# ninja log v5
+0	1186	1695867785647482571	src/doozer/impl/CMakeFiles/doozerimpl.dir/cuda/sleep.cu.o	264dc557860706bb
+1187	1219	1695867785683482926	CMakeFiles/doozerimpl.dir/cmake_device_link.o	7541252abca92acc
+1219	1259	1695867785723483319	src/doozer/impl/libdoozerimpl.so	d72c2e9b08196903
+1259	1608	1695867786023486276	src/doozer/core.cxx	657c9cfd353ad5e6
+1259	1608	1695867786023486276	/home/wlruys/syncthing/workspace/doozer/_skbuild/linux-x86_64-3.11/cmake-build/src/doozer/core.cxx	657c9cfd353ad5e6
+1608	2669	1695867787131497197	src/doozer/CMakeFiles/core.dir/core.cxx.o	c3e8c342db02ad23
+2669	2713	1695867787175497630	src/doozer/core.cpython-311-x86_64-linux-gnu.so	bebbece36e47210d
+2713	2719	0	CMakeFiles/install.util	9036706ddcccdf95

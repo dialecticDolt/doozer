@@ -1,0 +1,1 @@
+{"args": ["/home/wlruys/software/mambaforge/bin/cmake", "-DCONDA_PREFIX=/home/wlruys/software/mambaforge", "-DDOOZER_ENABLE_CUDA=1", "-DCMAKE_BUILD_TYPE:STRING=Release"], "version": "3.26.4", "environment": {"PYTHONNOUSERSITE": null, "PYTHONPATH": null}}

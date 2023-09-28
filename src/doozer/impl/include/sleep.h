@@ -3,6 +3,7 @@
 #define CYTHON_SLEEP_H
 
 #include <chrono>
+#include <cstdint>
 #include <time.h>
 #include <unistd.h>
 
@@ -13,7 +14,7 @@
 using namespace std;
 using namespace chrono;
 
-void cpu_busy_sleep(const unsigned long long micro) {
+void cpu_busy_sleep(const uint64_t micro) {
 
 #ifdef DOOZER_ENABLE_NVTX
   nvtx3::scoped_range r{"cpp::cpu_busy_sleep"};
@@ -31,7 +32,6 @@ void cpu_busy_sleep(const unsigned long long micro) {
   } while (elapsed.count() < micro);
 }
 
-void gpu_busy_sleep(const int device, const unsigned long long t,
-                    intptr_t stream_ptr);
+void gpu_busy_sleep(const int device, const uint64_t t, intptr_t stream_ptr);
 
 #endif
