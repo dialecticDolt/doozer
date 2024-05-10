@@ -13,23 +13,19 @@ dependencies = ["psutil", "pyyaml"]
 
 [tool.scikit-build]
 minimum-version = "0.5"
-build-dir = "build"
+build-dir = "build/{wheel_tag}"
 wheel.packages = ["src/doozer"]
 wheel.license-files = []
 cmake.minimum-version = "3.22.1"
 cmake.build-type = "Debug"
 cmake.verbose = true
 ninja.minimum-version = "1.11"
+wheel.exclude = ["**.pyx", "**.pxd", "impl*", "CMakeLists*"]
 
 [tool.scikit-build.cmake.define]
-DOOZER_ENABLE_NVTX = "OFF"
-DOOZER_ENABLE_CUDA = "OFF"
-DOOZER_ENABLE_HIP = "OFF"
-
-[project.optional-dependencies]
-gpu = ["cupy>=9.2"]
-crosspy = ["crosspy", "cupy>=9.2"]
-dev = ["ruff", "cython-lint", "cython"]
+DOOZER_ENABLE_NVTX = {env="DOOZER_ENABLE_NVTX", default="OFF"}
+DOOZER_ENABLE_CUDA = {env="DOOZER_ENABLE_CUDA", default="OFF"}
+DOOZER_ENABLE_HIP = {env="DOOZER_ENABLE_HIP", default="OFF"}
 
 [tool.cython-lint]
 ignore = [

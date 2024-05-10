@@ -44,9 +44,8 @@ target_include_directories(doozerimpl PUBLIC ${CUDAToolkit_INCLUDE_DIRS})
 target_include_directories(doozerimpl PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_include_directories(doozerimpl PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-#Move the libraries to the conda lib folder. This puts them on the library path.
 install(
         TARGETS doozerimpl
         EXPORT DoozerBackendTargets
-        LIBRARY DESTINATION .
+	LIBRARY DESTINATION ${SKBUILD_DATA_DIR}/lib
 )
