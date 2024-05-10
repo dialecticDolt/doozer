@@ -1,7 +1,7 @@
 file(GLOB IMPL_HDR ${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp)
 
 if(DOOZER_ENABLE_CUDA)
-    message(STATUS "Enabling CUDA support.")
+    message(STATUS "Enabling Doozer CUDA support.")
     enable_language(CUDA)
     find_package(CUDAToolkit REQUIRED)
     message(STATUS "CUDAToolkit_LIBRARY_DIR: " ${CUDAToolkit_LIBRARY_DIR})
@@ -33,7 +33,7 @@ if(DOOZER_ENABLE_CUDA)
 endif(DOOZER_ENABLE_CUDA)
 
 if(DOOZER_ENABLE_NVTX)
-    message(STATUS "Enabling NVTX support.")
+    message(STATUS "Enabling Doozer NVTX support.")
     target_include_directories(doozerimpl PUBLIC ${NVTX_INCLUDE})
     target_compile_definitions(doozerimpl PUBLIC DOOZER_ENABLE_NVTX)
 endif(DOOZER_ENABLE_NVTX)
@@ -47,8 +47,6 @@ target_include_directories(doozerimpl PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 #Move the libraries to the conda lib folder. This puts them on the library path.
 install(
         TARGETS doozerimpl
-        LIBRARY
-            DESTINATION lib
-        PUBLIC_HEADER
-            DESTINATION include
-    )
+        EXPORT DoozerBackendTargets
+        LIBRARY DESTINATION .
+)
