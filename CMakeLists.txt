@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 set(CMAKE_CXX_STANDARD 17)
 
-project(doozer LANGUAGES C CXX)
+project(${SKBUILD_PROJECT_NAME} LANGUAGES C CXX)
 
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
@@ -9,11 +9,30 @@ find_package(
   Python
   COMPONENTS Interpreter Development.Module
   REQUIRED
-  )
+)
 
-  message(STATUS "Python: " ${Python_EXECUTABLE})
+set(CYTHON cython)
+message(STATUS "Cython: " ${CYTHON})
+#Test if cython is installed
+if(NOT CYTHON)
+  message(
+    FATAL_ERROR
+      "Cython is required to build Parla. Please install cython and try again."
+    )
+endif()
+#Test if cython exists
+execute_process(COMMAND ${CYTHON} --version ERROR_QUIET OUTPUT_VARIABLE CYTHON_VERSION)
+if(NOT CYTHON_VERSION)
+  message(
+    FATAL_ERROR
+      "Cython is required to build Parla. Please install cython and try again."
+    )
+endif()
+
+message(STATUS "Python: " ${Python_EXECUTABLE})
 include_directories(${NUMPY_INCLUDE})
 
+set(CYTHON_FLAGS "--cplus;--fast-fail")
 
 set(3RD_PARTY_DIR ${PROJECT_SOURCE_DIR}/3rd-party)
 

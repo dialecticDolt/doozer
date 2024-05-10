@@ -5,9 +5,7 @@ build-backend = "scikit_build_core.build"
 [project]
 name = "doozer"
 version = "0.3.1"
-maintainers = [
-    { name = "William Ruys", email = "will.ruys@gmail.com" },
-]
+maintainers = [{ name = "William Ruys", email = "will.ruys@gmail.com" }]
 description = ""
 readme = "README.md"
 requires-python = ">=3.8"
